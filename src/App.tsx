@@ -1,46 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
+import Home from './pages/Home';
+import About from './pages/About';
+import Programs from './pages/Programs';
+import Events from './pages/Events';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header 
-        logo="/assets/images/logo.png"
-        organizationName="Hemja Welfare Society"
-      />
-      <main className="main-content">
-        <section className="welcome-section">
-          <h1 className="welcome-title">Welcome to the Hemja Welfare Society Website</h1>
-          
-          <p className="welcome-text">
-            We are currently working on building and updating our website. Upcoming events and important announcements will be posted here shortly.
-          </p>
-          
-          <p className="welcome-text">
-            In the meantime, we are collecting information about individuals from Hemja who are currently living in the USA.
-          </p>
-          
-          <p className="welcome-text">
-            Please use the link below to submit your details:
-          </p>
-          
-          <a 
-            href="https://forms.gle/LSrkJMLpqcEMVtwK6" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="form-link"
-          >
-            <span className="emoji-pointer">👉</span>
-            Submit Your Details
-          </a>
-          
-          <p className="thank-you">
-            Thank you for your support!
-          </p>
-        </section>
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <Header 
+          logo="/assets/images/logo.png"
+          organizationName="Hemja Welfare Society"
+        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
