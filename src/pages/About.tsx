@@ -115,13 +115,15 @@ const About: React.FC = () => {
 
   return (
     <div className="about-container">
-      <h1 className="about-title">About Us</h1>
+      <h1 className="about-title">
+        <span>About Us</span>
+      </h1>
       
       <section className="main-section">
-        <h2>Our Team</h2>
+        <h2 className="section-title">Our Team</h2>
         
         <div className="founder-section">
-          <h3>संस्थापक संरक्षक:</h3>
+          <h3 className="section-title">संस्थापक संरक्षक:</h3>
           <div className="person-card">
             {founder.image ? (
               <img src={founder.image} alt={founder.name} className="person-image" />
@@ -141,7 +143,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="patrons-section">
-          <h3>संरक्षक:</h3>
+          <h3 className="section-title">संरक्षक:</h3>
           <div className="patrons-grid">
             {patrons.map((patron, index) => (
               <div key={index} className="person-card">
@@ -169,7 +171,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="committee-section">
-          <h3>कार्य समिति</h3>
+          <h3 className="section-title">कार्य समिति</h3>
           <div className="committee-grid">
             {committee.map((member, index) => (
               <div key={index} className="person-card">
@@ -197,7 +199,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="advisors-section">
-          <h3>सल्लाहकारहरु</h3>
+          <h3 className="section-title">सल्लाहकारहरु</h3>
           <div className="advisors-grid">
             {advisors.map((group, groupIndex) => (
               <div key={groupIndex} className="advisor-group">
