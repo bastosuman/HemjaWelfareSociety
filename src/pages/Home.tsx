@@ -12,6 +12,7 @@ const Home: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [filteredImages, setFilteredImages] = useState<ImageData[]>([]);
+  const [isMeetingOpen, setIsMeetingOpen] = useState(false);
 
   const images: ImageData[] = [
     {
@@ -154,6 +155,126 @@ const Home: React.FC = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="meeting-section">
+        <div className="meeting-header" onClick={() => setIsMeetingOpen(!isMeetingOpen)}>
+          <h2>तेस्रो बैठकबाट निम्न बिषय हरुमा छलफल गरी निर्णय गरियो</h2>
+          <span className={`meeting-toggle ${isMeetingOpen ? 'open' : ''}`}>▼</span>
+        </div>
+        
+        {isMeetingOpen && (
+          <div className="meeting-content">
+            <div className="greeting">
+              <p>यहाँहरु संम्पुर्णमा नमस्कार</p>
+              <p>नयाँ बर्ष २०८२ सालको हार्दिक मंगलमय शुभकामना व्यक्त गर्दछौं॥</p>
+            </div>
+
+            <div className="meeting-info">
+              <p>हाम्रो संस्था हेमजा वेलफेयर सोसाईटी स्थापना कालदेखि नैं बिभिन्न चरणहरु पार गर्दैं यहाँसम्म आएको कुरा यहाँहरुलाई थाहानैं छ तथापि हामिले गर्नुपर्ने र गर्नसक्ने कतिपय कुराहरु समयमा गर्न सकेनौं र भैंपरि आएका कतिपय परिघटनाहरुलाई हामिसबैंको सहयोगबाट समाधानपनि गर्यौं।अब हाम्रो काम भनेको संस्थालाई चलायमान बनाउने र प्रतेक हेमजाबासीहरुलाई संस्थामा आवद्द गराएर अरु उद्देश्यहरु पुरा गर्दैं संस्थालाई आर्थिक र सामाजिक रुपमा अझ संक्षम र सबल बनाई हाम्रो हेमजासम्म जोड्ने हो।त्यसको लागि यहाँहरुको साथ,समर्थन र सहयोगको अझ बढि आवस्यकता रहन्छ त्यसकारण यहाँहरुबाट धेरैं अपेक्षा राखेकाछौं र आउदा दिनहरुमा हामि क्रमश संस्थालाई सबल बनाउने तर्फ अगाडी बढ्ने छौं।</p>
+              
+              <p className="meeting-date">April 6, 2025 मा Hicksville मा सम्पन्न</p>
+
+              <div className="committee-section">
+                <h3>संस्थापक संरक्षक:</h3>
+                <p>विश्ब राज बाँस्तोला</p>
+
+                <h3>संरक्षक:</h3>
+                <ul>
+                  <li>गंगाधर त्रिपाठी</li>
+                  <li>टेक ब. कुँवर</li>
+                  <li>मोहन क्षेत्रि</li>
+                  <li>ध्रुव कुँवर</li>
+                </ul>
+
+                <h3>कार्य समिति</h3>
+                <ul>
+                  <li>अध्यक्ष: ध्रुव राज पौंडेल</li>
+                  <li>उपाध्यक्ष: पदम दाहाल</li>
+                  <li>म.उपाध्यक्ष: लक्ष्मि थापा</li>
+                  <li>महासचिव: विश्व राज तिमिल्सिना</li>
+                  <li>सचिव: बिर ब.कुँवर</li>
+                  <li>कोषाध्यक्ष: लाल बहादुर जि.सि</li>
+                  <li>सदस्य: पदम कुँवर</li>
+                  <li>सदस्य: सुमन बाँस्तोला</li>
+                  <li>सदस्य: बिदुर सापकोटा</li>
+                  <li>सदस्य: सिता तिमिल्सिना</li>
+                  <li>सदस्य: गम ब. नेपाली</li>
+                </ul>
+
+                <h3>सल्लाहकारहरु</h3>
+                <div className="advisors-grid">
+                  <div className="advisor-group">
+                    <h4>न्युयोर्क:</h4>
+                    <ul>
+                      <li>निरज के.सि.</li>
+                      <li>अशोक राना</li>
+                      <li>निरज सापकोटा</li>
+                      <li>नविन कुमार अधिकारी</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>शिकागो:</h4>
+                    <ul>
+                      <li>गंगा थापा</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>न्युजर्सि:</h4>
+                    <ul>
+                      <li>हरि खड्का</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>भर्जिनिया:</h4>
+                    <ul>
+                      <li>जनक कुँवर</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>क्यालिफोर्निया:</h4>
+                    <ul>
+                      <li>अनिल कुँवर</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>टेक्सस:</h4>
+                    <ul>
+                      <li>गोविन्द कुँवर</li>
+                      <li>राजु तिमिल्सिना</li>
+                      <li>गोविन्द अधिकारी</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>पेन्सलभेनिया:</h4>
+                    <ul>
+                      <li>-</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>जर्जिया:</h4>
+                    <ul>
+                      <li>हरि तिमिल्सिना</li>
+                      <li>धन ब.कुँवर</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>मेरिल्यान्ड:</h4>
+                    <ul>
+                      <li>नविन राज पौंडेल</li>
+                    </ul>
+                  </div>
+                  <div className="advisor-group">
+                    <h4>कोलोराडो:</h4>
+                    <ul>
+                      <li>शिवहरि अधिकारी</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {selectedImage && (

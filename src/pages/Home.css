@@ -527,4 +527,191 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* Meeting Section Styles */
+.meeting-section {
+  margin: 3rem auto;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.meeting-header {
+  padding: 1.5rem;
+  background: #ffffff;
+  color: #2c3e50;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.meeting-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  color: #2c3e50;
+}
+
+.meeting-header:hover {
+  background: #f8f9fa;
+}
+
+.meeting-toggle {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  color: #2c3e50;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f8f9fa;
+}
+
+.meeting-toggle.open {
+  transform: rotate(180deg);
+}
+
+.meeting-content {
+  padding: 2rem;
+  background: #fff;
+}
+
+.greeting {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.greeting p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.meeting-info {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+}
+
+.meeting-date {
+  text-align: center;
+  font-weight: 600;
+  color: #3498db;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.committee-section {
+  margin-top: 2rem;
+}
+
+.committee-section h3 {
+  color: #2c3e50;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3498db;
+}
+
+.committee-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.committee-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.committee-section li:last-child {
+  border-bottom: none;
+}
+
+.advisors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.advisor-group {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.advisor-group h4 {
+  color: #3498db;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.advisor-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advisor-group li {
+  padding: 0.3rem 0;
+  font-size: 1rem;
+}
+
+/* Nepali Text Specific Styles */
+.meeting-content {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Responsive Design for Meeting Section */
+@media (max-width: 768px) {
+  .meeting-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .meeting-content {
+    padding: 1.5rem;
+  }
+  
+  .advisors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .meeting-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .meeting-content {
+    padding: 1rem;
+  }
+  
+  .advisors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .greeting p {
+    font-size: 1rem;
+  }
+  
+  .meeting-info {
+    font-size: 1rem;
+  }
 } 
