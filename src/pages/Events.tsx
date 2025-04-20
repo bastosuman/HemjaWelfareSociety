@@ -1,13 +1,22 @@
 import React from 'react';
+import Header from '../components/Header';
+import './Events.css';
 
 const Events: React.FC = () => {
   return (
-    <main className="coming-soon-container">
-      <div className="coming-soon-button">
-        Coming Soon
-      </div>
-      <p className="coming-soon-text">Events page is under construction</p>
-    </main>
+    <>
+      <Header />
+      <main className="events-container">
+        <div className="coming-soon">
+          <h1>Events</h1>
+          <div className="message">
+            <span className="emoji">📅</span>
+            <p>Will update you shortly</p>
+            <span className="emoji">✨</span>
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
 
