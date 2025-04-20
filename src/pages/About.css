@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 1rem;
   background: #ffffff;
+  min-height: 100vh;
 }
 
 .about-title {
@@ -16,14 +17,22 @@
   position: relative;
   padding-bottom: 0.5rem;
   width: 100%;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .main-section {
   margin: 1.5rem 0;
   background: #f8f9fa;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.main-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .main-section h2 {
@@ -42,10 +51,19 @@
 .committee-section,
 .advisors-section {
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 1.2rem;
   background: #ffffff;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.founder-section:hover,
+.patrons-section:hover,
+.committee-section:hover,
+.advisors-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .founder-section h3,
@@ -61,6 +79,7 @@
   border-bottom: 2px solid #3498db;
   width: 100%;
   display: block;
+  position: relative;
 }
 
 .person-card {
@@ -68,17 +87,18 @@
   flex-direction: column;
   align-items: center;
   margin: 0.8rem;
-  padding: 1rem;
+  padding: 1.2rem;
   background: #ffffff;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid #e9ecef;
+  width: calc(100% - 1.6rem);
 }
 
 .person-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-color: #3498db;
 }
 
@@ -87,9 +107,15 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   border: 3px solid #3498db;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.person-image:hover {
+  transform: scale(1.05);
+  border-color: #2980b9;
 }
 
 .image-upload-placeholder {
@@ -101,7 +127,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   cursor: pointer;
   border: 2px dashed #3498db;
   transition: all 0.3s ease;
@@ -110,7 +136,7 @@
 .image-upload-placeholder:hover {
   background: #e9ecef;
   border-color: #2980b9;
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .image-upload-input {
@@ -131,30 +157,42 @@
   color: #2c3e50;
   font-weight: 500;
   text-align: center;
+  word-break: break-word;
+  width: 100%;
+  line-height: 1.4;
 }
 
 .patrons-grid,
 .committee-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 1.2rem;
+  margin: 1.2rem 0;
+  width: 100%;
 }
 
 .advisors-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  width: 100%;
 }
 
 .advisor-group {
   background: #ffffff;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border: 1px solid #e9ecef;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.advisor-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .advisor-group h4 {
@@ -171,8 +209,9 @@
 .advisors-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.8rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 /* Responsive Design */
@@ -183,19 +222,29 @@
   
   .about-title {
     font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .main-section {
+    padding: 1rem;
+    margin: 1.2rem 0;
+    border-radius: 10px;
   }
   
   .main-section h2 {
     font-size: 1.6rem;
+    margin-bottom: 1.2rem;
   }
   
   .patrons-grid,
   .committee-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
   }
   
   .advisors-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
   
   .person-image,
@@ -205,7 +254,12 @@
   }
   
   .person-card {
-    padding: 0.8rem;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .person-card p {
+    font-size: 0.9rem;
   }
 }
 
@@ -216,15 +270,32 @@
   
   .about-title {
     font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .main-section {
+    padding: 0.8rem;
+    margin: 1rem 0;
+    border-radius: 8px;
   }
   
   .main-section h2 {
     font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .founder-section h3,
+  .patrons-section h3,
+  .committee-section h3,
+  .advisors-section h3 {
+    font-size: 1.2rem;
+    margin: 0.8rem 0 0.6rem;
   }
   
   .patrons-grid,
   .committee-grid {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
   
   .person-image,
@@ -237,7 +308,26 @@
     font-size: 0.8rem;
   }
   
+  .person-card {
+    padding: 0.8rem;
+    margin: 0.3rem;
+  }
+  
   .person-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  .advisor-group {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .advisor-group h4 {
+    font-size: 1rem;
+  }
+  
+  .advisors-list {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 } 
