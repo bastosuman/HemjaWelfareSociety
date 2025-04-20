@@ -223,6 +223,9 @@
   .about-title {
     font-size: 1.8rem;
     margin-bottom: 1.2rem;
+    padding: 0.5rem;
+    background: none;
+    -webkit-text-fill-color: #2c3e50;
   }
   
   .main-section {
@@ -234,6 +237,16 @@
   .main-section h2 {
     font-size: 1.6rem;
     margin-bottom: 1.2rem;
+    padding: 0.5rem;
+  }
+  
+  .founder-section h3,
+  .patrons-section h3,
+  .committee-section h3,
+  .advisors-section h3 {
+    font-size: 1.4rem;
+    margin: 1rem 0 0.8rem;
+    padding: 0.5rem;
   }
   
   .patrons-grid,
@@ -271,6 +284,9 @@
   .about-title {
     font-size: 1.6rem;
     margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: none;
+    -webkit-text-fill-color: #2c3e50;
   }
   
   .main-section {
@@ -282,14 +298,16 @@
   .main-section h2 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
+    padding: 0.5rem;
   }
   
   .founder-section h3,
   .patrons-section h3,
   .committee-section h3,
   .advisors-section h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0.8rem 0 0.6rem;
+    padding: 0.5rem;
   }
   
   .patrons-grid,
@@ -323,7 +341,8 @@
   }
   
   .advisor-group h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
   }
   
   .advisors-list {
