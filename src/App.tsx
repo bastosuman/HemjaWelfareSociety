@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import About from './pages/About';
-import Programs from './pages/Programs';
-import Events from './pages/Events';
+import Updates from './pages/Updates';
 import Contact from './pages/Contact';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -16,13 +16,15 @@ function App() {
           logo="/assets/images/logo.png"
           organizationName="Hemja Welfare Society"
         />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/updates" element={<Updates />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );

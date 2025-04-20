@@ -1,0 +1,243 @@
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #ffffff;
+}
+
+.about-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.main-section {
+  margin: 1.5rem 0;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.founder-section,
+.patrons-section,
+.committee-section,
+.advisors-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.founder-section h3,
+.patrons-section h3,
+.committee-section h3,
+.advisors-section h3 {
+  color: #2c3e50;
+  margin: 1rem 0 0.8rem;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: 600;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #3498db;
+  width: 100%;
+  display: block;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.8rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.person-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border-color: #3498db;
+}
+
+.person-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border: 3px solid #3498db;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.image-upload-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border: 2px dashed #3498db;
+  transition: all 0.3s ease;
+}
+
+.image-upload-placeholder:hover {
+  background: #e9ecef;
+  border-color: #2980b9;
+  transform: scale(1.02);
+}
+
+.image-upload-input {
+  display: none;
+}
+
+.image-upload-placeholder span {
+  color: #3498db;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0 0.8rem;
+  font-weight: 500;
+}
+
+.person-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 500;
+  text-align: center;
+}
+
+.patrons-grid,
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.advisors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.advisor-group {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.advisor-group h4 {
+  color: #3498db;
+  margin: 0 0 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.advisors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 0.8rem;
+  }
+  
+  .about-title {
+    font-size: 1.8rem;
+  }
+  
+  .main-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .patrons-grid,
+  .committee-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .advisors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .person-image,
+  .image-upload-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .person-card {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0.5rem;
+  }
+  
+  .about-title {
+    font-size: 1.6rem;
+  }
+  
+  .main-section h2 {
+    font-size: 1.4rem;
+  }
+  
+  .patrons-grid,
+  .committee-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .person-image,
+  .image-upload-placeholder {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .image-upload-placeholder span {
+    font-size: 0.8rem;
+  }
+  
+  .person-card p {
+    font-size: 0.9rem;
+  }
+} 

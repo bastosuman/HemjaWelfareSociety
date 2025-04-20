@@ -16,8 +16,8 @@ const Header: React.FC<HeaderProps> = ({ logo, organizationName }) => {
                 <nav className="nav-menu">
                     <ul>
                         <li><NavLink to="/" end>Home</NavLink></li>
-                        <li><NavLink to="/about">About Us</NavLink></li>
-                        <li><NavLink to="/programs">Programs</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/updates">Updates</NavLink></li>
                         <li><NavLink to="/events">Events</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
