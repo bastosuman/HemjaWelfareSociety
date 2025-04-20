@@ -821,6 +821,18 @@
   transition: color 0.3s ease;
   padding: 0.5rem;
   line-height: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.close-popup:hover {
+  color: #2c3e50;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 480px) {
@@ -840,5 +852,13 @@
   .welcome-popup .form-link {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .close-popup {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    top: 0.25rem;
+    right: 0.25rem;
   }
 } 
