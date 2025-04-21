@@ -182,63 +182,63 @@ const Home: React.FC = () => {
         )}
 
         <section className="gallery-section">
-          <h2 className="gallery-title">Our Community in Hemja Picnic 2024</h2>
-          
-          <div className="filter-buttons">
-            {categories.map(category => (
-              <button
-                key={category}
-                className={`filter-button ${activeFilter === category ? 'active' : ''}`}
-                onClick={() => setActiveFilter(category)}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </button>
-            ))}
-          </div>
-
-          {isLoading ? (
-            <div className="loading-grid">
-              {[...Array(6)].map((_, index) => (
-                <div key={index} className="loading-skeleton">
-                  <div className="skeleton-image"></div>
-                  <div className="skeleton-text"></div>
-                </div>
+          <div className="gallery-container">
+            <div className="filter-buttons">
+              {categories.map(category => (
+                <button
+                  key={category}
+                  className={`filter-button ${activeFilter === category ? 'active' : ''}`}
+                  onClick={() => setActiveFilter(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
               ))}
             </div>
-          ) : (
-            <div className="image-grid">
-              {filteredImages.map((image, index) => (
-                <div 
-                  key={index} 
-                  className="image-item"
-                  onClick={() => openLightbox(image)}
-                  style={{ '--index': index } as React.CSSProperties}
-                >
-                  <div className="image-container">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      loading="lazy"
-                      onLoad={(e) => e.currentTarget.classList.add('loaded')}
-                    />
-                    <div className="image-overlay">
-                      <p className="image-caption">{image.caption}</p>
-                      <span className="zoom-icon">🔍</span>
-                      <span className="image-category">{image.category}</span>
-                      <div className="image-stats">
-                        <span className="stat-item">
-                          ❤️ {imageStats[image.src]?.likes || 0}
-                        </span>
-                        <span className="stat-item">
-                          📤 {imageStats[image.src]?.shares || 0}
-                        </span>
+
+            {isLoading ? (
+              <div className="loading-grid">
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="loading-skeleton">
+                    <div className="skeleton-image"></div>
+                    <div className="skeleton-text"></div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="image-grid">
+                {filteredImages.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className="image-item"
+                    onClick={() => openLightbox(image)}
+                    style={{ '--index': index } as React.CSSProperties}
+                  >
+                    <div className="image-container">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        loading="lazy"
+                        onLoad={(e) => e.currentTarget.classList.add('loaded')}
+                      />
+                      <div className="image-overlay">
+                        <p className="image-caption">{image.caption}</p>
+                        <span className="zoom-icon">🔍</span>
+                        <span className="image-category">{image.category}</span>
+                        <div className="image-stats">
+                          <span className="stat-item">
+                            ❤️ {imageStats[image.src]?.likes || 0}
+                          </span>
+                          <span className="stat-item">
+                            �� {imageStats[image.src]?.shares || 0}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          )}
+                ))}
+              </div>
+            )}
+          </div>
         </section>
 
         {selectedImage && (
