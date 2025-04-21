@@ -28,7 +28,7 @@ const About: React.FC = () => {
     { name: 'पदम दाहाल', role: 'उपाध्यक्ष', image: '/assets/images/padam dahal.jpg' },
     { name: 'लक्ष्मि थापा', role: 'म.उपाध्यक्ष', image: '/assets/images/laxmi thapa.jpg' },
     { name: 'विश्व राज तिमिल्सिना', role: 'महासचिव', image: '/assets/images/Bishwaraj Timilsina.jpg' },
-    { name: 'बिर ब.कुँवर', role: 'सचिव', image: '/assets/images/Bir%20Bahdur%20Kunwar.jpg' },
+    { name: 'बिर ब.कुँवर', role: 'सचिव', image: '/assets/images/BirBahdurKunwar.jpg' },
     { name: 'लाल बहादुर जि.सि', role: 'कोषाध्यक्ष' },
     { name: 'पदम कुँवर', role: 'सदस्य' },
     { name: 'सुमन बाँस्तोला', role: 'सदस्य', image: 'assets/images/Suman.jpg' },
