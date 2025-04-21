@@ -9,6 +9,9 @@ body {
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .App {
@@ -95,10 +98,10 @@ a:hover {
 }
 
 .main-content {
-  max-width: 1200px;
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
   width: 100%;
 }
 
@@ -296,6 +299,16 @@ a:hover {
     padding: 1.5rem 3rem;
     font-size: 1.5rem;
   }
+
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.5rem;
+  }
 }
 
 /* Animation for page transitions */
@@ -312,4 +325,11 @@ a:hover {
 
 .main-content {
   animation: fadeIn 0.5s ease-out;
+}
+
+/* Fix for iOS momentum scrolling */
+body.menu-open {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
 }

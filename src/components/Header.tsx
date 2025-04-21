@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -16,6 +16,11 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const isActive = (path: string) => {
     return location.pathname === path;
   };
@@ -23,26 +28,38 @@ const Header: React.FC = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-content">
-        <a href="/" className="logo-container">
+        <Link to="/" className="logo-container">
           <img src="/assets/images/logo.png" alt="Hemja Welfare Society Logo" className="logo" />
           <div className="logo-text">
             <h1 className="organization-name">Hemja Welfare Society</h1>
           </div>
-        </a>
+        </Link>
 
         <button 
           className="mobile-menu-button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? '✕' : '☰'}
         </button>
 
         <nav className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-          <a href="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>Home</a>
-          <a href="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>About</a>
-          <a href="/updates" className={`nav-link ${isActive('/updates') ? 'active' : ''}`}>Updates</a>
-          <a href="/events" className={`nav-link ${isActive('/events') ? 'active' : ''}`}>Events</a>
-          <a href="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</a>
+          <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
+            Home
+          </Link>
+          <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>
+            About
+          </Link>
+          <Link to="/updates" className={`nav-link ${isActive('/updates') ? 'active' : ''}`}>
+            Updates
+          </Link>
+          <Link to="/events" className={`nav-link ${isActive('/events') ? 'active' : ''}`}>
+            Events
+          </Link>
+          <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
+            Contact
+          </Link>
         </nav>
       </div>
     </header>

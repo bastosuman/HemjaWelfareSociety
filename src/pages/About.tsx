@@ -13,19 +13,22 @@ interface AdvisorGroup {
 }
 
 const About: React.FC = () => {
-  const [founder, setFounder] = useState<Person>({ name: 'विश्ब राज बाँस्तोला' });
+  const [founder, setFounder] = useState<Person>({ 
+    name: 'विश्ब राज बाँस्तोला',
+    image: '/assets/images/Bishwaraj bastola.jpg'
+  });
   const [patrons, setPatrons] = useState<Person[]>([
-    { name: 'गंगाधर त्रिपाठी' },
+    { name: 'गंगाधर त्रिपाठी', image: '/assets/images/ganga Tripathi.jpg' },
     { name: 'टेक ब. कुँवर' },
     { name: 'मोहन क्षेत्रि' },
     { name: 'ध्रुव कुँवर' }
   ]);
   const [committee, setCommittee] = useState<Person[]>([
-    { name: 'ध्रुव राज पौंडेल', role: 'अध्यक्ष' },
-    { name: 'पदम दाहाल', role: 'उपाध्यक्ष' },
-    { name: 'लक्ष्मि थापा', role: 'म.उपाध्यक्ष' },
-    { name: 'विश्व राज तिमिल्सिना', role: 'महासचिव' },
-    { name: 'बिर ब.कुँवर', role: 'सचिव' },
+    { name: 'ध्रुव राज पौंडेल', role: 'अध्यक्ष', image: '/assets/images/Dhruba Paudel.jpg' },
+    { name: 'पदम दाहाल', role: 'उपाध्यक्ष', image: '/assets/images/padam dahal.jpg' },
+    { name: 'लक्ष्मि थापा', role: 'म.उपाध्यक्ष', image: '/assets/images/laxmi thapa.jpg' },
+    { name: 'विश्व राज तिमिल्सिना', role: 'महासचिव', image: '/assets/images/Bishwaraj Timilsina.jpg' },
+    { name: 'बिर ब.कुँवर', role: 'सचिव', image: '/assets/images/Bir Bahdur Kunwar.JPG' },
     { name: 'लाल बहादुर जि.सि', role: 'कोषाध्यक्ष' },
     { name: 'पदम कुँवर', role: 'सदस्य' },
     { name: 'सुमन बाँस्तोला', role: 'सदस्य', image: 'assets/images/Suman.jpg' },
